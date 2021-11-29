@@ -24,4 +24,4 @@ In WateringSummary, use the last watered date, and the wateringSchedule, to disp
 
 You may assume that every month is 30 days long. 
 
-*hint* One solution to decide if a plant is overdue, is to convert the current date and the last watered date to times in milliseconds, determine the difference between these two numbers of milliseconds, and decide if that is more than one week or one month.  One week is 1000 * 60 * 60 * 24 * 7 milliseconds long.  (milliseconds * seconds in a minutes * minutes in an hour * hours in a day * days in a week).
+*Hint* One solution to decide if a plant is overdue, is to convert the current date and the last watered date to times in milliseconds, determine the difference between these two numbers of milliseconds, and decide if that is more than one week or one month.  One week is 1000 * 60 * 60 * 24 * 7 milliseconds long.  (milliseconds in a second * seconds in a minutes * minutes in an hour * hours in a day * days in a week).
