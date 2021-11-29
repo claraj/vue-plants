@@ -2,6 +2,7 @@
   <div class="plant-detail">
 
     <div class="plant-container">
+
       <div class="plant-text">
       <h2>{{ plant.name }}</h2>
 
@@ -15,6 +16,7 @@
 
       <label>Have you watered this plant?</label>
       <input type="checkbox" v-model="userSetWatered" v-on:change="waterUpdate">
+
     </div>
 
     <div class="plant-image">   
@@ -31,9 +33,9 @@
 <script>
 export default {
   name: 'HousePlant',
-  emits: ['water-update'],
+  // TODO #4: specify this component emits a water-update event
   props: {
-    plant: Object,
+    // TODO #2: create a plant prop. This prop is an Object
   },
   data() {
     return {
@@ -42,8 +44,9 @@ export default {
   },
   methods: {
     waterUpdate() {
-      let dateUpdated = new Date()
-      this.$emit('water-update', this.plant.id, this.userSetWatered, dateUpdated)
+      let dateWatered = new Date()
+      // TODO #3: emit 'water-update' message with the plant's id, if it is watered, the dateWatered 
+
     },
     photoPath(imageFile) {
       // dynamically set image path.  @ is shorthand for your vue folder's src directory.

@@ -6,7 +6,7 @@
 
     <h4>You have watered these plants</h4>
 
-    <div v-if="watered.length">
+    <div v-if="watered">
         <p v-for="plant in watered" v-bind:key="plant.id">
             {{ plant.name }} has been watered.
         </p>
@@ -18,7 +18,7 @@
 
     <h4>You have NOT watered these plants</h4>
 
-    <div v-if="notWatered.length"> 
+    <div v-if="notWatered"> 
         <p v-for="plant in notWatered" v-bind:key="plant.id">
             {{ plant.name }} needs to be watered.
         </p>
@@ -35,22 +35,14 @@
 export default {
   name: 'WateringSummary',
   props: {
-      summary: Array
+      // TODO #6: Create a summary prop. The summary prop should be an Array.
   },
   computed: {
       watered() {
-        let wateredPlants = [] 
-          this.summary.forEach( plant => {
-              if (plant.watered) {
-                  wateredPlants.push(plant)
-              }
-          })
-          return wateredPlants
-          // Or, the one-liner version with filter,
-          // return this.summary.filter( plant => plant.watered)
+        // TODO #8: create a list of names of plants that have been watered. Use the summary prop
       },
       notWatered() {
-          return this.summary.filter( plant => !plant.watered)
+        // TODO #9: create a list of names of plants that have NOT been watered. Use the summary prop         
       }
   }
     
