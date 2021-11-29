@@ -46,6 +46,7 @@ export default {
       this.$emit('water-update', this.plant.id, this.userSetWatered, dateUpdated)
     },
     photoPath(imageFile) {
+      // dynamically set image path.  @ is shorthand for your vue folder's src directory.
       return require('@/assets/' + imageFile)
     },
     shortDate(date) {
