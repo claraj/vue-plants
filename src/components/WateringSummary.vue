@@ -1,6 +1,6 @@
 <template>
   
-  <div>
+  <div id="watering-summary">
 
     <h2>Summary</h2>
 
@@ -8,7 +8,7 @@
 
     <div v-if="watered.length">
         <p v-for="plant in watered" v-bind:key="plant.id">
-            {{ plant.name }} has been watered {{ plant.wateringSchedule }}
+            {{ plant.name }} has been watered.
         </p>
         </div>
     <div v-else class="empty-list-message">
@@ -20,7 +20,7 @@
 
     <div v-if="notWatered.length"> 
         <p v-for="plant in notWatered" v-bind:key="plant.id">
-            {{ plant.name }} needs to be watered {{ plant.wateringSchedule }}
+            {{ plant.name }} needs to be watered.
         </p>
     </div>
     <div v-else class="empty-list-message">
@@ -62,5 +62,10 @@ export default {
 .empty-list-message {
     font-style: italic;
 }
+
+#watering-summary {
+    min-height: 20em;
+}
+
 
 </style>

@@ -10,6 +10,9 @@
       <p>{{ plant.description }}</p>
       <p>You should water this plant <b>{{ plant.wateringSchedule }}.</b></p>
 
+      <p v-if="plant.lastWaterDate">Last water date: {{ shortDate(plant.lastWaterDate) }}</p>
+      <p v-else>Last water date: unknown</p>
+
       <label>Have you watered this plant?</label>
       <input type="checkbox" v-model="userSetWatered" v-on:change="waterUpdate">
     </div>
@@ -31,7 +34,6 @@ export default {
   emits: ['water-update'],
   props: {
     plant: Object,
-    watered: Boolean
   },
   data() {
     return {
@@ -40,10 +42,16 @@ export default {
   },
   methods: {
     waterUpdate() {
-      this.$emit('water-update', this.plant.id, this.userSetWatered)
+      let dateUpdated = new Date()
+      this.$emit('water-update', this.plant.id, this.userSetWatered, dateUpdated)
     },
     photoPath(imageFile) {
       return require('@/assets/' + imageFile)
+    },
+    shortDate(date) {
+      if (date) {
+        return new Intl.DateTimeFormat('en-US', {timeZone: 'UTC'}).format(date)
+      }
     }
   }
 
