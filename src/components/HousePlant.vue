@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      userSetWatered: this.watered,
+      userSetWatered: this.plant.watered,
     }
   },
   methods: {
