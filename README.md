@@ -20,7 +20,9 @@ When the user indicates the plant has been watered by checking the checkbox, ens
 
 Modify App.vue's wateringSummary computed property and include the wateringSchedule property for each plant.
 
-In WateringSummary, use the last watered date, and the wateringSchedule, to display a warning for any plants who are overdue for watering.  For example, if today is March 10th 2021, and we have a plant who has a weekly wateringSchedule. If this plant was last watered on February 1st, it is overdue for watering.  If this plant was last watered on March 8th, it is not overdue. 
+In WateringSummary, instead of a list of watered/not watered, display a list of plants who and how long it has been since they were last watered. 
+
+use the last watered date, and the wateringSchedule, to display a warning for any plants who are overdue for watering.  For example, if today is March 10th 2021, and we have a plant who has a weekly wateringSchedule. If this plant was last watered on February 1st, it is overdue for watering.  If this plant was last watered on March 8th, it is not overdue. 
 
 You may assume that every month is 30 days long. 
 
